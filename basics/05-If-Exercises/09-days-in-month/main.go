@@ -115,6 +115,9 @@ func main() {
 	for i := 0; i < len(months); i++ {
 		if month == months[i] {
 			fmt.Printf("%q has %d days.\n", os.Args[1], days[i])
+		} else {
+			fmt.Printf("%q is not a month name.\n", os.Args[1])
+			return
 		}
 	}
 
