@@ -88,27 +88,30 @@ func main() {
 		return
 	}
 
+	var description string
 	switch {
 	case magnitude >= 10:
-		fmt.Printf("%.2f is massive\n", magnitude)
+		description = "massive"
 	case magnitude >= 8:
-		fmt.Printf("%.2f is great\n", magnitude)
+		description = "great"
 	case magnitude >= 7:
-		fmt.Printf("%.2f is major\n", magnitude)
+		description = "major"
 	case magnitude >= 6:
-		fmt.Printf("%.2f is strong\n", magnitude)
+		description = "strong"
 	case magnitude >= 5:
-		fmt.Printf("%.2f is moderate\n", magnitude)
+		description = "moderate"
 	case magnitude >= 4:
-		fmt.Printf("%.2f is light\n", magnitude)
+		description = "light"
 	case magnitude >= 3:
-		fmt.Printf("%.2f is minor\n", magnitude)
+		description = "minor"
 	case magnitude >= 2:
-		fmt.Printf("%.2f is very\n", magnitude)
+		description = "very minor"
 	case magnitude < 2:
-		fmt.Printf("%.2f is micro\n", magnitude)
+		description = "micro"
 	default:
 		fmt.Println("Not assigned.")
+		return
 	}
 
+	fmt.Printf("%.2f is %s\n", magnitude, description)
 }
