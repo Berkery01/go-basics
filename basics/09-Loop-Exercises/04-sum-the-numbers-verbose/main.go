@@ -29,10 +29,10 @@ import "fmt"
 
 func main() {
 	var sum int
-	max := 10
-	for i := 1; i <= max; i++ {
+	min, max := 1, 10
+	for i := min; i <= max; i++ {
 		sum += i
-		if i != max {
+		if i < max {
 			fmt.Printf("%d %s ", i, "+")
 		} else {
 			fmt.Printf("%d %s %d\n", i, "=", sum)
