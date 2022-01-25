@@ -29,7 +29,7 @@ import (
 func main() {
 	// 1. uncomment the code below
 	png, header := []byte{'P', 'N', 'G'}, []byte{}
-	header = append(header, 'P', 'N', 'G')
+	header = append(header, png...)
 
 	if bytes.Equal(png, header) {
 		fmt.Println("They are equal.")
