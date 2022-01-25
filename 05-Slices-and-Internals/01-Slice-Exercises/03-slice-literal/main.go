@@ -61,4 +61,8 @@ func main() {
 	fmt.Printf("data     : %T %d %t\n", data, len(data), data == nil)
 	fmt.Printf("ratios   : %T %d %t\n", ratios, len(ratios), ratios == nil)
 	fmt.Printf("alives   : %T %d %t\n", alives, len(alives), alives == nil)
+
+	if len(distances) == len(data) {
+		fmt.Println("The length of the distances and the data slices are the same.")
+	}
 }
