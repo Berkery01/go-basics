@@ -64,7 +64,9 @@ func main() {
 		"lastname3": {5004004040, 5223445555},
 	}
 
-	basket := map[int]map[int]int{}
+	basket := map[int]map[int]int{
+		1: {123123: 10, 1333: 4},
+	}
 
 	fmt.Printf("phones     : %#v\n", phone)
 	fmt.Printf("products   : %#v\n", available)
