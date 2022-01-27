@@ -46,30 +46,47 @@ func main() {
 	// Element Key:
 	//   Key: Product ID Element: Quantity
 
-	phone := map[string]int{
-		"lastname1": 5002001010,
-		"lastname2": 5003002020,
-		"lastname3": 5004004040,
+	phone := map[string]string{
+		"lastname1": "5002001010",
+		"lastname2": "5003002020",
+		"lastname3": "5004004040",
 	}
 
-	available := map[int]bool{
+	products := map[int]bool{
 		223322: true,
 		112233: false,
 		001122: true,
 	}
 
-	numbers := map[string][]int{
-		"lastname1": {5002001010, 5003001010},
-		"lastname2": {5003002020, 5003331010},
-		"lastname3": {5004004040, 5223445555},
+	numbers := map[string][]string{
+		"lastname1": {"5002001010", "5003001010"},
+		"lastname2": {"5003002020", "5003331010"},
+		"lastname3": {"5004004040", "5223445555"},
 	}
 
 	basket := map[int]map[int]int{
 		1: {123123: 10, 1333: 4},
 	}
 
-	fmt.Printf("phones     : %#v\n", phone)
-	fmt.Printf("products   : %#v\n", available)
-	fmt.Printf("multiPhones: %#v\n", numbers)
-	fmt.Printf("basket     : %#v\n", basket)
+	user, p := "lastname1", "N/A"
+	if v, ok := phone[user]; ok {
+		p = v
+	}
+	fmt.Printf("%s 's phone number is %q\n", user, p)
+
+	id, status := 223322, "available"
+	if !products[id] {
+		status = "not" + status
+	}
+	fmt.Printf("Product: %d is %s\n", id, status)
+
+	user2, p := "lastname2", "N/A"
+	if v, ok := numbers[user2]; ok {
+		p = v[1]
+	}
+	fmt.Printf("%s 's second phone number is %q\n", user2, p)
+
+	cid, pid := 1, 123123
+	count := basket[cid][pid]
+	fmt.Printf("User %d has product %d in the basket with amount of %d\n", cid, pid, count)
 }
