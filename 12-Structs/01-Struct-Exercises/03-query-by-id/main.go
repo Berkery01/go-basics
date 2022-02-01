@@ -109,6 +109,7 @@ func main() {
 				continue
 			}
 			fmt.Printf("#%d: %-15q %-20s $%d\n", query.id, query.name, "("+query.genre+")", query.price)
+
 		}
 	}
 }
